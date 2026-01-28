@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(250, 240, 226);
+}
+
+.tituloCabeçalho{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.listaStatus{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.btn-status{
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+}
