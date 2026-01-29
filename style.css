@@ -38,3 +38,67 @@ body{
     box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 
 }
+
+
+/* CARD */
+.listaCards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px;
+}
+.card{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    height: 250px;
+    position: relative;
+}
+
+
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statusCard{
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #eee;
+}
+
+
+
+
+.origemCard{
+    margin-top: 10px;
+    display: block;
+    padding-bottom: 10px;
+}
+.emailCard{
+    display: block;
+    padding-bottom: 10px;
+}
+.telefoneCard{
+    display: block;
+    padding-bottom: 10px;
+}
+.dataCard{
+    display: block;
+    padding-bottom: 10px;
+}
+
+
+.cardAcoes{
+    position: absolute; /* tira do fluxo normal*/
+    bottom: 15px; /*cola embaixo*/
+    right: 15px; /*cola na direita*/
+
+    display: flex;
+    gap: 10px;
+}
+
