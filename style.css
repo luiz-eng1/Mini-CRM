@@ -40,6 +40,34 @@ body{
 }
 
 
+
+/* BOTÃO ADICIONAR LEAD */
+.div-botaoAddLead{
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 60px 0 60px;
+}
+.btn-adicionarLead{
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-adicionarLead:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+
+
+
 /* CARD */
 .listaCards{
     display: grid;
