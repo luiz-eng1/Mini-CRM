@@ -15,6 +15,28 @@ let leads = [
 const listaCards = document.querySelector(".listaCards");
 console.log(listaCards);
 
+
+
+let proximoId = 1
+function adicionarLead(){
+    
+    const NovoLead = {
+        id: proximoId,
+        nome: "Manual",
+        email: "email@exemplo.com",
+        telefone: "00000-0000",
+        data: new Date().toLocaleDateString(),  /*Cria um objeto de data com o momento atual. */
+        status: "Oportunidade"
+    }
+    proximoId++
+
+
+    leads.push(NovoLead)
+    renderizarLeads();
+}
+
+
+
 function renderizarLeads(){
     listaCards.innerHTML = "" /*limpar a div dos cards*/
 
