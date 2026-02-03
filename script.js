@@ -15,42 +15,53 @@ let leads = [
 const listaCards = document.querySelector(".listaCards");
 console.log(listaCards);
 
-
 function renderizarLeads(){
+    listaCards.innerHTML = "" /*limpar a div dos cards*/
+
+
+    leads.forEach(lead => {
+
+
     const cardArticle = document.createElement("article")
-    cardArticle.classList.add("ArticleDoCard")
+    cardArticle.classList.add("card")
 
-
+    /* HEADER */
     const divHeader = document.createElement("div")
-    cardHeader.classList.add("card-header")
+    divHeader.classList.add("card-header")
 
     const spanNome = document.createElement("span")
     spanNome.classList.add("nomeLead")
+    spanNome.innerText = lead.nome;
 
     const spanStatus = document.createElement("span")
     spanStatus.classList.add("statusLead")
+    spanStatus.innerText = lead.status
 
 
 
 
-
+    /* Body */
     const divBody = document.createElement("div")
     divBody.classList.add("cardBody")
 
     const spanOrigem = document.createElement("span")
     spanOrigem.classList.add("origemCard")
+    spanOrigem.innerText = lead.origem
 
     const spanEmail = document.createElement("span")
     spanEmail.classList.add("emailCard")
+    spanEmail.innerText = lead.email
 
     const spanTelefone = document.createElement("span")
     spanTelefone.classList.add("telefoneCard")
+    spanTelefone.innerText = lead.telefone
 
     const spanData = document.createElement("span")
     spanData.classList.add("dataCard")
+    spanData.innerText = lead.data
 
 
-
+    /* Acões do Card */
     const divCardAcoes = document.createElement("div")
     divCardAcoes.classList.add("cardAcoes")
 
@@ -63,8 +74,37 @@ function renderizarLeads(){
     btnEditar.classList.add("btn-editar")
 
     const btnAvancar = document.createElement("button")
+    btnEditar.innerText = "Avançar Status"
     btnAvancar.classList.add("btn-avancar")
 
-    
+
+
+
+        /* MONTAGEM */
+        cardArticle.appendChild(divHeader)
+        cardArticle.appendChild(divBody)
+        cardArticle.appendChild(divCardAcoes)
+
+
+        divHeader.appendChild(spanNome)
+        divHeader.appendChild(spanStatus)
+
+
+        divBody.appendChild(spanOrigem)
+        divBody.appendChild(spanEmail)
+        divBody.appendChild(spanTelefone)
+        divBody.appendChild(spanData)
+        
+
+        divCardAcoes.appendChild(btnApagar)
+        divCardAcoes.appendChild(btnEditar)
+        divCardAcoes.appendChild(btnAvancar)
+
+        listaCards.appendChild(cardArticle)
+    })
+  
 
 }
+
+
+renderizarLeads();
