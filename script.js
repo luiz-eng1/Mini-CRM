@@ -151,7 +151,11 @@ function renderizarLeads(){
     const btnAvancar = document.createElement("button")
     btnAvancar.innerText = "Avançar Status"
     btnAvancar.classList.add("btn-avancar")
-    
+    btnAvancar.addEventListener("click", function (){ /*EVENTO DE CLICK PARA O BOTÃO AVANÇAR STATUS */
+        {
+        avancarStatus(lead.id)
+    }
+    })
 
 
 
