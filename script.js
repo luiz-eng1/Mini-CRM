@@ -11,6 +11,13 @@ let leads = [
     }
 ]
 
+const fluxoStatus = [
+    "oportunidade", 
+    "contato_realizado", 
+    "proposta_enviada",
+    "negocio_fechado",
+    "negocio_perdido"
+]
 
 
 
@@ -51,6 +58,20 @@ function excluirLead(id){
                                                                                     se for false → ele sai "
     */
             
+    renderizarLeads();
+}
+
+function avancarStatus(id){
+    const lead = leads.find(e => e.id === id) /* para achar um id especifico no array, usamos FIND */
+
+    const indiceAtual = fluxoStatus.indexOf(lead.status) /* descobrir em que posição do array está o status atual do lead - para isso usamos INDEXOF */
+
+    if(indiceAtual === -1 || indiceAtual === fluxoStatus.length - 1 ){ /* se o indice for o ultimo (ultimo status) não avança */
+        return
+    }
+
+    lead.status = fluxoStatus[indiceAtual + 1] /* atualizar o lead ( o lead foi atualizado no array original) */
+
     renderizarLeads();
 }
 
@@ -128,8 +149,9 @@ function renderizarLeads(){
     btnEditar.classList.add("btn-editar")
 
     const btnAvancar = document.createElement("button")
-    btnEditar.innerText = "Avançar Status"
+    btnAvancar.innerText = "Avançar Status"
     btnAvancar.classList.add("btn-avancar")
+    
 
 
 
