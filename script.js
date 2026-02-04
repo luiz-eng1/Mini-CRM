@@ -114,7 +114,9 @@ function renderizarLeads(){
     btnApagar.classList.add("btn-apagar")
 
 
-    
+    btnApagar.addEventListener("click", function () { /* EVENTO PARA O BOTÃO DE EXCLUIR */
+    excluirLead(lead.id)
+})
     
 
 
