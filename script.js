@@ -12,8 +12,13 @@ let leads = [
 ]
 
 
+
+
 const listaCards = document.querySelector(".listaCards");
 console.log(listaCards);
+
+
+
 
 
 
@@ -34,6 +39,23 @@ function adicionarLead(){
     leads.push(NovoLead)
     renderizarLeads();
 }
+
+
+function excluirLead(id){
+        
+    leads = leads.filter(lead => lead.id !== id)
+    /* leads = array de objetos
+        o que o FILTER faz? = percorre o array
+        lead = um elemento do array por vez
+        lead.id !== id      isso significa "esse lead não tem o id que quero excluir? se for true → ele fica
+                                                                                    se for false → ele sai "
+    */
+            
+    renderizarLeads();
+}
+
+
+
 
 
 
@@ -90,6 +112,14 @@ function renderizarLeads(){
     const btnApagar = document.createElement("button")
     btnApagar.innerText = "🗑️";
     btnApagar.classList.add("btn-apagar")
+
+
+    
+    
+
+
+
+
 
     const btnEditar = document.createElement("button")
     btnEditar.innerText = "🖊";
