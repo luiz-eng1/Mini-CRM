@@ -13,11 +13,23 @@ let leads = [
 
 const fluxoStatus = [
     "oportunidade", 
-    "contato_realizado", 
-    "proposta_enviada",
-    "negocio_fechado",
-    "negocio_perdido"
+    "contato realizado", 
+    "proposta enviada",
+    "negocio fechado",
+    "negocio perdido"
 ]
+
+
+
+let statusSelecionado = null  /* representa a aba ativa - existe para o sistema consultar para qual aba o lead vai */
+
+const botoesStatus = document.querySelectorAll(".btn-status")  /* pega todos os botões da nav */
+botoesStatus.forEach(botao => {
+    botao.addEventListener("click", () => {           /* para cada botão, adiciona um evento de click */
+        statusSelecionado = botao.dataset.status
+        renderizarLeads()
+    })
+})
 
 
 
@@ -29,7 +41,7 @@ console.log(listaCards);
 
 
 
-let proximoId = 1
+let proximoId = leads.length +1
 function adicionarLead(){
     
     const NovoLead = {
@@ -38,7 +50,7 @@ function adicionarLead(){
         email: "email@exemplo.com",
         telefone: "00000-0000",
         data: new Date().toLocaleDateString(),  /*Cria um objeto de data com o momento atual. */
-        status: "Oportunidade"
+        status: "oportunidade"
     }
     proximoId++
 
@@ -64,7 +76,7 @@ function excluirLead(id){
 function avancarStatus(id){
     const lead = leads.find(e => e.id === id) /* para achar um id especifico no array, usamos FIND */
 
-    const indiceAtual = fluxoStatus.indexOf(lead.status) /* descobrir em que posição do array está o status atual do lead - para isso usamos INDEXOF */
+    const indiceAtual = fluxoStatus.indexOf(lead.status) /* descobrir em que posição do array está o status atual do lead - para isso usamos INDEXOF → (descobrir a posição (índice) de um valor dentro de um array.) */
 
     if(indiceAtual === -1 || indiceAtual === fluxoStatus.length - 1 ){ /* se o indice for o ultimo (ultimo status) não avança */
         return
@@ -83,8 +95,15 @@ function avancarStatus(id){
 function renderizarLeads(){
     listaCards.innerHTML = "" /*limpar a div dos cards*/
 
+    let listaParaRenderizar = leads
+    if(statusSelecionado){
+        listaParaRenderizar = leads.filter(       /* crio uma variavel que recebe o array leads - usado o filter para percorrer todo o array - para cada lead, se o status for IDENTICO ao status selecionado ele fica, se não, ele sai. */
+            lead => lead.status === statusSelecionado
+        )
+    }
 
-    leads.forEach(lead => {
+
+    listaParaRenderizar.forEach(lead => {
 
 
     const cardArticle = document.createElement("article")
