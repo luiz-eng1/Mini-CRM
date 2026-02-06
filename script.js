@@ -111,7 +111,10 @@ const modal = document.getElementById("modal")
         modal.classList.add("active")
     }
 
-   
+    function fecharModal(){
+        modal.classList.remove("active")
+        
+    }
     
 
     
