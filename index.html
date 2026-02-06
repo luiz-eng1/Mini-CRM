@@ -29,6 +29,9 @@
             <button class="btn-adicionarLead"  onclick="abrirModal()"> + Adicionar Lead</button>
         </div>
 
+
+        <!--MODAL-->
+
         <div class ="modal" id="modal">
             <div class="tituloModal"><h1>Novo Lead</h1></div>
 
@@ -54,7 +57,7 @@
 
             <div>
                 <h3>Data</h3>
-                <input type="number">
+                <input type="text">
             </div>
 
             <div>
@@ -65,6 +68,11 @@
                     <option value="proposta enviada">Proposta Enviada</option>
                     <option value="negocio fechado">Negócio Fechado</option>
                 </select>
+            </div>
+
+            <div>
+                <button id="btn-confirmar">Confirmar</button>
+                <button id="btn-cancelar">Cancelar</button>
             </div>
 
 
