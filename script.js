@@ -11,6 +11,8 @@ let leads = [
     }
 ]
 
+
+
 const fluxoStatus = [
     "oportunidade", 
     "contato realizado", 
@@ -21,15 +23,18 @@ const fluxoStatus = [
 
 
 
+
+
 let statusSelecionado = null  /* representa a aba ativa - existe para o sistema consultar para qual aba o lead vai */
 
 const botoesStatus = document.querySelectorAll(".btn-status")  /* pega todos os botões da nav */
 botoesStatus.forEach(botao => {
-    botao.addEventListener("click", () => {           /* para cada botão, adiciona um evento de click */
-        statusSelecionado = botao.dataset.status
+    botao.addEventListener("click", () => {           /* para cada botão, adiciona um evento de click -  botao.dataset é um objeto que contém todos os data-atributes do botão  */
+        statusSelecionado = botao.dataset.status        
         renderizarLeads()
     })
 })
+
 
 
 
@@ -60,6 +65,10 @@ function adicionarLead(){
 }
 
 
+
+
+
+
 function excluirLead(id){
         
     leads = leads.filter(lead => lead.id !== id)
@@ -72,6 +81,11 @@ function excluirLead(id){
             
     renderizarLeads();
 }
+
+
+
+
+
 
 function avancarStatus(id){
     const lead = leads.find(e => e.id === id) /* para achar um id especifico no array, usamos FIND */
@@ -88,6 +102,19 @@ function avancarStatus(id){
 }
 
 
+
+
+/* FUNÇÕES DO MODAL */
+const modal = document.getElementById("modal")
+    function abrirModal(){
+        
+        modal.classList.add("active")
+    }
+
+   
+    
+
+    
 
 
 

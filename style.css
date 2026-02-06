@@ -141,4 +141,10 @@ body{
     gap: 10px;
 }
 
+.modal{
+    display: none;
 
+}
+.modal.active{
+    display: flex;
+}
