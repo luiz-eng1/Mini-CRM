@@ -26,10 +26,49 @@
     
     <main>
         <div class="div-botaoAddLead">
-            <button class="btn-adicionarLead"  onclick="adicionarLead()"> + Adicionar Lead</button>
+            <button class="btn-adicionarLead"  onclick="abrirModal()"> + Adicionar Lead</button>
         </div>
 
-        <div class ="modal" id="modal"></div>
+        <div class ="modal" id="modal">
+            <div class="tituloModal"><h1>Novo Lead</h1></div>
+
+            <div>
+                <h3>Nome do lead</h3>
+                <input type="text">
+            </div>
+
+            <div>
+                <h3>Origem</h3>
+                <input type="text">
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <input type="text">
+            </div>
+
+            <div>
+                <h3>Telefone</h3>
+                <input type="number">          
+            </div>
+
+            <div>
+                <h3>Data</h3>
+                <input type="number">
+            </div>
+
+            <div>
+                <h3>Status</h3>
+                <select >
+                    <option value="oportunidade">Oportunidade</option>
+                    <option value="contato realizado">Contato Realizado</option>
+                    <option value="proposta enviada">Proposta Enviada</option>
+                    <option value="negocio fechado">Negócio Fechado</option>
+                </select>
+            </div>
+
+
+        </div>
         
 
         <section class="listaCards">
