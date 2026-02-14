@@ -144,11 +144,11 @@ body{
 
 /* MODAL APARECER E DESAPARECER*/
 
-.modal{
+.modalSobreposto{
     display: none;
 
 }
-.modal.active{
+.modalSobreposto.active{
     display: flex;
 }
 
