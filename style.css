@@ -163,6 +163,8 @@ body{
     display: none;
     justify-content: center;
     align-items: center;
+
+    z-index: 100;
 }
 
 .modal-sobreposto.active{
@@ -170,7 +172,43 @@ body{
 }
 .modal{
     background: white;
+    width: 450px;
     padding: 30px;
     border-radius: 10px;
     width: 500px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    animation: aparecer 0.2s ease-out;
+}
+
+.modal input,
+.modal select{
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border-radius: 1px solid #ccc;
+}
+.modal-botoes{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@keyframes aparecer{
+    from{
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.tituloModal{
+    text-align: center;
 }
