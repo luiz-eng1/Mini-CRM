@@ -105,7 +105,7 @@ function avancarStatus(id){
 
 
 /* FUNÇÕES DO MODAL */
-const modal = document.getElementById("modal")
+const modal = document.getElementById("modalSobreposto")
     function abrirModal(){
         
         modal.classList.add("active")
