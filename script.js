@@ -64,7 +64,12 @@ function adicionarLead(){
     renderizarLeads();
     fecharModal()
 
-    
+    /* LIMPAR OS INPUTS */
+    inputNome.value = ""
+    inputOrigem.value = ""
+    inputEmail.value = ""
+    inputData.value = ""
+    inputStatus.value = ""
 }
 
 
