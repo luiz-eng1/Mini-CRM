@@ -51,17 +51,20 @@ function adicionarLead(){
     
     const NovoLead = {
         id: proximoId,
-        nome: "Manual",
-        email: "email@exemplo.com",
-        telefone: "00000-0000",
-        data: new Date().toLocaleDateString(),  /*Cria um objeto de data com o momento atual. */
-        status: "oportunidade"
+        nome: inputNome.value,
+        email: inputOrigem.value,
+        telefone: inputEmail.value, /* UTILIZAR inputEmail.value NO OBJETO PARA QUE OS LEADS SEJAM CRIADOS COM OS VALORES DIGITADOS NO MODAL */
+        data: inputData.value,  
+        status: inputStatus.value
     }
     proximoId++
 
 
     leads.push(NovoLead)
     renderizarLeads();
+    fecharModal()
+
+    
 }
 
 
@@ -116,7 +119,13 @@ const modal = document.getElementById("modalSobreposto")
         
     }
     
-
+    /* CRIANDO VARIAVEIS PARA TER ACESSO AO VALOR DOS INPUTS DO MODAL */
+    const inputNome = document.getElementById("inputNome")
+    const inputOrigem = document.getElementById("inputOrigem")
+    const inputEmail = document.getElementById("inputEmail")
+    const inputTelefone = document.getElementById("inputTelefone")
+    const inputData = document.getElementById("inputData")
+    const inputStatus = document.getElementById("inputStatus")
     
 
 
