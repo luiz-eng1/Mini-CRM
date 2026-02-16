@@ -122,6 +122,15 @@ function avancarStatus(id){
     renderizarLeads();
 }
 
+function limparInputs(){
+    inputNome.value = ""
+    inputEmail.value = ""
+    inputData = ""
+    inputOrigem.value = ""
+    inputStatus.value = ""
+    inputTelefone.value = ""
+}
+
 
 
 
@@ -130,6 +139,10 @@ const modal = document.getElementById("modalSobreposto")
     function abrirModal(){
         
         modal.classList.add("active")
+
+        modoModal = "criar"
+        idEmEdicao = null
+        limparInputs()
     }
 
     function fecharModal(){
@@ -229,6 +242,9 @@ function renderizarLeads(){
     btnEditar.innerText = "🖊";
     btnEditar.classList.add("btn-editar")
     btnEditar.addEventListener("click", function(){
+        modoModal = "editar"
+        idEmEdicao = lead.id
+        inputNome.value = lead.nome
 
     })
 
