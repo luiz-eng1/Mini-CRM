@@ -35,6 +35,9 @@ let idEmEdicao = null
     const inputTelefone = document.getElementById("inputTelefone")
     const inputData = document.getElementById("inputData")
     const inputStatus = document.getElementById("inputStatus")
+
+
+    
     
 
 
@@ -81,6 +84,9 @@ function adicionarLead(){
     limparInputs()
     
 }
+
+
+
 
 function atualizarLead(){
     const lead = leads.find(l => l.id === idEmEdicao)
@@ -134,6 +140,8 @@ function avancarStatus(id){
     renderizarLeads();
 }
 
+
+
 function limparInputs(){
     inputNome.value = ""
     inputEmail.value = ""
@@ -151,16 +159,22 @@ const modal = document.getElementById("modalSobreposto")
     function abrirModal(){
         
         modal.classList.add("active")
-
-        modoModal = "criar"
-        idEmEdicao = null
-        limparInputs()
     }
 
     function fecharModal(){
         modal.classList.remove("active")
         
     }
+
+
+    /* FUNÇÃO PARA O BOTÃO + ADICINAR LEAD */
+    const btnAdicionarLead= document.getElementById("btn-adicionarLead")
+    btnAdicionarLead.addEventListener("click", function(){
+        modoModal = "criar"
+        idEmEdicao = null
+        limparInputs()
+        abrirModal()
+    })
 
 
     /* FUNÇÕES PARA O BOTÃO DE EDITAR LEAD */
