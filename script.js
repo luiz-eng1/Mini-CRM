@@ -22,7 +22,20 @@ const fluxoStatus = [
 ]
 
 
+/* VARIAVEIS GLOBAIS */
 
+let modoModal = "criar"
+let idEmEdicao = null
+
+
+/* CRIANDO VARIAVEIS PARA TER ACESSO AO VALOR DOS INPUTS DO MODAL */
+    const inputNome = document.getElementById("inputNome")
+    const inputOrigem = document.getElementById("inputOrigem")
+    const inputEmail = document.getElementById("inputEmail")
+    const inputTelefone = document.getElementById("inputTelefone")
+    const inputData = document.getElementById("inputData")
+    const inputStatus = document.getElementById("inputStatus")
+    
 
 
 let statusSelecionado = null  /* representa a aba ativa - existe para o sistema consultar para qual aba o lead vai */
@@ -123,14 +136,19 @@ const modal = document.getElementById("modalSobreposto")
         modal.classList.remove("active")
         
     }
+
+
+    /* FUNÇÕES PARA O BOTÃO DE EDITAR LEAD */
+    const btnConfirmar = document.getElementById("btn-confirmar")
+    btnConfirmar.addEventListener("click", salvarLead)
     
-    /* CRIANDO VARIAVEIS PARA TER ACESSO AO VALOR DOS INPUTS DO MODAL */
-    const inputNome = document.getElementById("inputNome")
-    const inputOrigem = document.getElementById("inputOrigem")
-    const inputEmail = document.getElementById("inputEmail")
-    const inputTelefone = document.getElementById("inputTelefone")
-    const inputData = document.getElementById("inputData")
-    const inputStatus = document.getElementById("inputStatus")
+    function salvarLead(){
+        if(modoModal === "criar"){
+            adicionarLead()
+        }else{
+            atualizarLead()
+        }
+    }
     
 
 
@@ -210,6 +228,9 @@ function renderizarLeads(){
     const btnEditar = document.createElement("button")
     btnEditar.innerText = "🖊";
     btnEditar.classList.add("btn-editar")
+    btnEditar.addEventListener("click", function(){
+
+    })
 
     const btnAvancar = document.createElement("button")
     btnAvancar.innerText = "Avançar Status"
