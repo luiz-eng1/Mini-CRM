@@ -65,8 +65,9 @@ function adicionarLead(){
     const NovoLead = {
         id: proximoId,
         nome: inputNome.value,
-        email: inputOrigem.value,
-        telefone: inputEmail.value, /* UTILIZAR inputEmail.value NO OBJETO PARA QUE OS LEADS SEJAM CRIADOS COM OS VALORES DIGITADOS NO MODAL */
+        origem: inputOrigem.value,
+        email: inputEmail.value,
+        telefone: inputTelefone.value, /* UTILIZAR inputEmail.value NO OBJETO PARA QUE OS LEADS SEJAM CRIADOS COM OS VALORES DIGITADOS NO MODAL */
         data: inputData.value,  
         status: inputStatus.value
     }
@@ -77,12 +78,23 @@ function adicionarLead(){
     renderizarLeads();
     fecharModal()
 
-    /* LIMPAR OS INPUTS */
-    inputNome.value = ""
-    inputOrigem.value = ""
-    inputEmail.value = ""
-    inputData.value = ""
-    inputStatus.value = ""
+    limparInputs()
+    
+}
+
+function atualizarLead(){
+    const lead = leads.find(l => l.id === idEmEdicao)
+
+    lead.nome = inputNome.value
+    lead.origem = inputOrigem.value
+    lead.email = inputEmail.value
+    lead.telefone = inputTelefone.value
+    lead.data = inputData.value
+    lead.status = inputStatus.value
+
+    renderizarLeads()
+    fecharModal()
+    limparInputs()
 }
 
 
@@ -125,7 +137,7 @@ function avancarStatus(id){
 function limparInputs(){
     inputNome.value = ""
     inputEmail.value = ""
-    inputData = ""
+    inputData.value = ""
     inputOrigem.value = ""
     inputStatus.value = ""
     inputTelefone.value = ""
@@ -245,6 +257,13 @@ function renderizarLeads(){
         modoModal = "editar"
         idEmEdicao = lead.id
         inputNome.value = lead.nome
+        inputData.value = lead.data
+        inputEmail.value = lead.email
+        inputOrigem.value = lead.origem
+        inputStatus.value = lead.status
+        inputTelefone.value = lead.telefone
+
+        abrirModal()
 
     })
 
