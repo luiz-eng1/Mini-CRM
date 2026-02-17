@@ -1,14 +1,4 @@
 let leads = [
-    {
-        id: 1,
-        nome: "João Silva",
-        origem: "Instagram",
-        email: "joao@email.com",
-        telefone: "1199999999", 
-        data: "02/02/2026",
-        status: "Oportunidade"
-
-    }
 ]
 
 

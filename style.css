@@ -267,3 +267,17 @@ body{
 .tituloModal{
     text-align: center;
 }
+
+.btn-confirmar{
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4CAF50;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+
