@@ -265,7 +265,7 @@ function renderizarLeads(){
 
 
     const btnEditar = document.createElement("button")
-    btnEditar.innerText = "🖊";
+    btnEditar.innerText = "Editar Lead";
     btnEditar.classList.add("btn-editar")
     btnEditar.addEventListener("click", function(){
         modoModal = "editar"

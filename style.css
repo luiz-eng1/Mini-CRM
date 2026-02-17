@@ -144,8 +144,16 @@ body{
 .btn-apagar{
     border: none;
     height: 30px;
-    
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #ee5c30;
+
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
+
+
 
 
 .btn-avancar{
@@ -158,7 +166,7 @@ body{
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 /* MODAL APARECER E DESAPARECER*/
