@@ -268,7 +268,7 @@ body{
     text-align: center;
 }
 
-.btn-confirmar{
+#btn-confirmar{
     border: none;
     border-radius: 8px;
     color: white;
@@ -280,4 +280,14 @@ body{
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
 
+#btn-cancelar{
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #db2c00;
 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
