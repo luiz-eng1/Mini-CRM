@@ -6,7 +6,7 @@ let leads = [
         email: "joao@email.com",
         telefone: "1199999999", 
         data: "02/02/2026",
-        status: "oportunidade"
+        status: "Oportunidade"
 
     }
 ]
@@ -14,11 +14,11 @@ let leads = [
 
 
 const fluxoStatus = [
-    "oportunidade", 
-    "contato realizado", 
-    "proposta enviada",
-    "negocio fechado",
-    "negocio perdido"
+    "Oportunidade", 
+    "Contato Realizado", 
+    "Proposta Enviada",
+    "Negocio Fechado",
+    "Negocio Perdido"
 ]
 
 

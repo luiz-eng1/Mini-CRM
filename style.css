@@ -81,6 +81,15 @@ body{
     padding: 20px;
     height: 250px;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
 
@@ -92,6 +101,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
 }
 
 
@@ -128,6 +139,12 @@ body{
     padding-bottom: 10px;
 }
 
+.cardBody{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+
+    
+}
 
 
 
